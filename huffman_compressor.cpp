@@ -21,7 +21,7 @@ struct Compare {
 void buildCodes(HuffNode* node, std::string code, std::unordered_map<char, std::string>& codes) {
     if (!node) return;
     if (!node->left && !node->right) {
-        codes[node->ch] = code.empty() ? "0" : code; // handles the single-distinct-char edge case
+        codes[node->ch] = code.empty() ? "0" : code;
         return;
     }
     buildCodes(node->left, code + "0", codes);
